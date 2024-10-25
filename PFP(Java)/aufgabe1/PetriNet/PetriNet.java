@@ -59,7 +59,7 @@ public class PetriNet {
 		}
 
 		for (Place out : transition.getOutputs()){
-			out.setTokens(in.getTokens() + transition.getOutputWeight(out));
+			out.setTokens(out.getTokens() + transition.getOutputWeight(out));
 		}
 	}
 
