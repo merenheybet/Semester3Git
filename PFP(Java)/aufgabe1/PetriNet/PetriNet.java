@@ -1,8 +1,6 @@
 import java.util.ArrayList;
 import java.util.List;
 
-
-
 /**
  * A class describing a petri net.
  */
@@ -30,8 +28,19 @@ public class PetriNet {
 	 * @return true if the transition can fire; false otherwise
 	 */
 	public boolean canFire(final Transition transition) {
-		// TODO
-		return false;
+		// Check if all inputs have enough markers to fire
+		for (Place p : transition.getInputs()){
+			int tokenAmount = p.getTokens();
+			if (transition.getInputWeight(p) > tokenAmount){return false;}
+		}
+
+		for (Place p : transition.getOutputs()){
+			int tokenAmount = p.getTokens();
+			int remainingCapacity = p.getCapacity() - tokenAmount;
+			if (transition.getOutputWeight(p) > remainingCapacity){return false;}
+		}
+
+		return true;
 	}
 
 
@@ -44,7 +53,14 @@ public class PetriNet {
 	 */
 	public void fire(final Transition transition) {
 		assert canFire(transition);
-		// TODO
+		// Reduce tokens from the inputs by their relative weight.
+		for (Place in : transition.getInputs()){
+			in.setTokens(in.getTokens() - transition.getInputWeight(in));
+		}
+
+		for (Place out : transition.getOutputs()){
+			out.setTokens(in.getTokens() + transition.getOutputWeight(out));
+		}
 	}
 
 
