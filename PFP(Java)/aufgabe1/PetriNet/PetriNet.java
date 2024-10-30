@@ -35,8 +35,17 @@ public class PetriNet {
 		}
 
 		for (Place p : transition.getOutputs()){
-			int tokenAmount = p.getTokens();
-			int remainingCapacity = p.getCapacity() - tokenAmount;
+			int remainingCapacity;
+			if (transition.getInputs().contains(p) && transition.getOutputs().contains(p)){
+				Place tempPlace = new Place(p.getName(), p.getTokens()-transition.getInputWeight(p), p.getCapacity());
+				int tokenAmount = tempPlace.getTokens();
+				remainingCapacity = tempPlace.getCapacity() - tokenAmount;
+			}
+			else{
+				int tokenAmount = p.getTokens();
+				remainingCapacity = p.getCapacity() - tokenAmount;
+			}
+
 			if (transition.getOutputWeight(p) > remainingCapacity){return false;}
 		}
 
