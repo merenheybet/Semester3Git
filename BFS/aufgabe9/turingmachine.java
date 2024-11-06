@@ -10,8 +10,8 @@ public class turingmachine {
 
     public turingmachine(String input){
         this.input = input;
-        status = zustand.q0;
-        acceptableEnd = zustand.q9;
+        status = zustand.q_0;
+        acceptableEnd = zustand.q_9;
         // length of the band should be at least 2 bigger than the input
         // because Blanks at the end and beginning
         band = new char[input.length() + 2];
@@ -29,15 +29,13 @@ public class turingmachine {
         for(int i = 0; i < bandIndex; i++){
             System.out.print(band[i]);
         }
-        System.out.print("[" + status + "]");
+        System.out.print("$" + status + "$");
         for(int i = bandIndex; i < band.length; i++){
             System.out.print(band[i]);
         }
         System.out.println();
     }
-
-    public zustand getStatus(){return this.status;}
-
+    
     public void setStatus(zustand status) {
         this.status = status;
     }
@@ -48,43 +46,43 @@ public class turingmachine {
         while(status != acceptableEnd) {
             printBand();
             switch (status) {
-                case q0:
+                case q_0:
                     if (band[bandIndex] == '0') {
                         band[bandIndex] = 'X';
-                        setStatus(zustand.q2);
+                        setStatus(zustand.q_2);
                         bandIndex++;
                     } else if (band[bandIndex] == '1') {
-                        setStatus(zustand.q1);
+                        setStatus(zustand.q_1);
                         band[bandIndex] = 'X';
                         bandIndex++;
                     } else {
                         return false;
                     } break;
 
-                case q1:
+                case q_1:
                     if (band[bandIndex] == '0' || band[bandIndex] == '1') {
                         bandIndex++;
                     } else if (band[bandIndex] == '#') {
                         bandIndex++;
-                        setStatus(zustand.q3);
+                        setStatus(zustand.q_3);
                     } else {
                         return false;
                     }break;
 
-                case q2:
+                case q_2:
                     if (band[bandIndex] == '0' || band[bandIndex] == '1') {
                         bandIndex++;
                     } else if (band[bandIndex] == '#') {
                         bandIndex++;
-                        setStatus(zustand.q4);
+                        setStatus(zustand.q_4);
                     } else {
                         return false;
                     }break;
 
-                case q3:
+                case q_3:
                     if (band[bandIndex] == '1') {
                         band[bandIndex] = 'X';
-                        setStatus(zustand.q5);
+                        setStatus(zustand.q_5);
                         bandIndex--;
                     } else if (band[bandIndex] == 'X') {
                         bandIndex++;
@@ -92,10 +90,10 @@ public class turingmachine {
                     else{return false;}
                     break;
 
-                case q4:
+                case q_4:
                     if (band[bandIndex] == '0') {
                         band[bandIndex] = 'X';
-                        setStatus(zustand.q5);
+                        setStatus(zustand.q_5);
                         bandIndex--;
                     } else if (band[bandIndex] == 'X') {
                         bandIndex++;
@@ -104,50 +102,50 @@ public class turingmachine {
                         return false;
                     }break;
 
-                case q5:
+                case q_5:
                     if(band[bandIndex] == 'X'){
                         bandIndex--;
                     }
                     else if(band[bandIndex] == '#'){
                         bandIndex--;
-                        setStatus(zustand.q6);
+                        setStatus(zustand.q_6);
                     }
                     else{
                         return false;
                     }break;
 
-                case q6:
+                case q_6:
                     if (band[bandIndex] == '0' || band[bandIndex] == '1') {
                         bandIndex--;
                     } else if (band[bandIndex] == 'X') {
-                        setStatus(zustand.q7);
+                        setStatus(zustand.q_7);
                         bandIndex++;
                     } else {
                         return false;
                     }break;
 
-                case q7:
+                case q_7:
                     if (band[bandIndex] == '0') {
                         band[bandIndex] = 'X';
-                        setStatus(zustand.q2);
+                        setStatus(zustand.q_2);
                         bandIndex++;
                     } else if (band[bandIndex] == '1') {
                         band[bandIndex] = 'X';
-                        setStatus(zustand.q1);
+                        setStatus(zustand.q_1);
                         bandIndex++;
                     }
                     else if(band[bandIndex] == '#'){
                         bandIndex++;
-                        setStatus(zustand.q8);
+                        setStatus(zustand.q_8);
                     }
                     else{
                         return false;
                     }break;
 
-                case q8:
+                case q_8:
                     if(band[bandIndex] == 'B'){
                         band[bandIndex] = 'B';
-                        setStatus(zustand.q9);
+                        setStatus(zustand.q_9);
                     }
                     else if(band[bandIndex] == 'X'){
                         bandIndex++;
