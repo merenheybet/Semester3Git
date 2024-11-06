@@ -26,16 +26,24 @@ public class turingmachine {
     }
 
     public void printBand(){
-        for(int i = 0; i < bandIndex; i++){
+        for(int i = 1; i < bandIndex; i++){
+            if(band[i] == '#'){
+                System.out.print("\\" + band[i]);
+                continue;
+            }
             System.out.print(band[i]);
         }
         System.out.print("$" + status + "$");
-        for(int i = bandIndex; i < band.length; i++){
+        for(int i = bandIndex; i < band.length-1; i++){
+            if(band[i] == '#'){
+                System.out.print("\\" + band[i]);
+                continue;
+            }
             System.out.print(band[i]);
         }
-        System.out.println();
+        System.out.print(" $\\vdash$ ");
     }
-    
+
     public void setStatus(zustand status) {
         this.status = status;
     }
@@ -156,6 +164,7 @@ public class turingmachine {
             }
         }
 
+        printBand();
         return true;
     }
 
