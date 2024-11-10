@@ -1,0 +1,110 @@
+\documentclass[11pt]{article}
+\usepackage{graphicx} % Required for inserting images
+\usepackage{indentfirst}
+\usepackage[a4paper, margin=3cm]{geometry}
+\usepackage[main=ngerman]{babel}
+\usepackage{hyperref}
+\usepackage[shortlabels]{enumitem}
+
+\setlength{\parskip}{5pt}
+\graphicspath{./images/}
+\hypersetup{linktoc=all}
+
+\title{BFS - Blatt 2}
+\author{oz83upir (Jan Gremer) - lu08mika (Metin Eren Heybet)\\
+ - om24esyc (Luka Jeremic) - ci24nony (Dennis Gehring)}
+\date{09 November 2024}
+
+\begin{document}
+
+\maketitle
+\section*{Aufgabe 9}
+
+\begin{enumerate}[(a)]
+    \item \begin{itemize}
+        \item $ M = (Q, \Sigma, \Gamma, \delta, q_0, F) $ \\
+        $ Q = \{ q_0, q_1, q_2, q_3, q_4, q_5, q_6, q_7, q_8, q_9 \} $ \\
+        $ \Sigma = \{0, 1, \# \} $ \\
+        $ \Gamma = \{0, 1, \#, "B", X\} $\\
+        $ F = \{q_9\}$
+
+        \begin{table}[h!]
+           \centering
+            \renewcommand{\arraystretch}{1.33}
+            \begin{tabular}{c|cccccc}
+            
+                $\delta$ & $0$ & $1$ & $B$ & $X$ & $\#$ \\ \hline
+                $q_0$ & $(q_2, X, R)$ & $(q_1, X, R)$ & - & - & - \\
+                $q_1$ & $(q_1, 0, R)$ & $(q_1, 1, R)$ & - & - & $(q_3, \#, R)$ \\
+                $q_2$ & $(q_2, 0, R)$ & $(q_2, 1, R)$ & - & - & $(q_4, \#, R)$ \\
+                $q_3$ & - & $(q_5, X, L)$ & - & $(q_3, X, R)$ & - \\ 
+                $q_4$ & $(q_5, X, L)$ & - & - & $(q_4, X, R)$ & - \\ 
+                $q_5$ & - & - & - & $(q_5, X, L)$ & $(q_6, \#, L)$ \\ 
+                $q_6$ & $(q_6, 0, L)$ & $(q_6, 1, L)$ & - & $(q_7, X, R)$ & - \\ 
+                $q_7$ & $(q_2, X, R)$ & $(q_1, X, R)$ & - & - & $(q_8, \#, R)$ \\ 
+                $q_8$ & - & - & $(q_9, B, N)$ & $(q_8, X, R)$ & - \\ 
+                $q_9$ & - & - & - & - & - \\
+            \end{tabular}
+        \end{table}
+
+        \item Erklärung der Arbeitsweise:
+        \begin{itemize}
+            \item[--] Die TM liest immer das linkeste ungelesene Zeichen und speichert 0/1 im Zustand.
+            \item[--] Dann läuft die TM linkesten ungelesenen Zeichen rechts des \#
+            \item[--] Falls die beiden Zeichen übereinstimmen wird fortgesetzt, sonst angehalten
+            \item[--] Verglichene Zeichen werden durch X ersetzt.
+            \item[--] Zum Fortsetzen läuft die TM wieder zum linkesten Zeichen und geht zu (1)
+            \item[--] Falls ein \# und direkt links davon X gelesen wird, ist das linke Wort vollständig analysiert.
+            \item[--] Falls dann auch das rechte Wort vollständig analysiert ist, hält die TM im gültigen Endzustand ($q_9$)   
+        \end{itemize}
+        
+        \bigbreak
+        \item Konfigurationsübergänge für Eingabe 01\#01:\\
+        $q_0$01\#01 $\vdash$ X$q_2$1\#01 $\vdash$ X1$q_2$\#01 $\vdash$ X1\#$q_4$01 $\vdash$ X1$q_5$\#X1 
+        \\ $\vdash$ X$q_6$1\#X1 $\vdash$ $q_6$X1\#X1 $\vdash$ X$q_7$1\#X1 $\vdash$ XX$q_1$\#X1 $\vdash$ XX\#$q_3$X1 
+        \\ $\vdash$ XX\#X$q_3$1 $\vdash$ XX\#$q_5$XX $\vdash$ XX$q_5$\#XX $\vdash$ X$q_6$X\#XX $\vdash$ XX$q_7$\#XX 
+        \\ $\vdash$ XX\#$q_8$XX $\vdash$ XX\#X$q_8$X $\vdash$ XX\#XX$q_8$ $\vdash$ XX\#XX$q_9$ $\rightarrow$ TM hält akzeptierend
+    \end{itemize}
+    
+    \item Wieviel Platz $S_{A9}(n)$ und Zeit $T_{A9}(n)$ benötigt die TM?:
+    \begin{itemize}
+        \item[--] Platzbedarf der TM M ist $\Theta(n)$, da die Turingmaschine M außer dem schon besetzten Bereich nie etwas schreibt. Also die Maschine läuft \glqq in-place\grqq.
+        \item[--] Laufzeit $\Theta(n^2)$: Begründung...
+    \end{itemize}
+    
+\end{enumerate}
+
+\section*{Aufgabe 9}
+
+\begin{itemize}
+    \item $ M = (Q, \Sigma, \Gamma, \delta, q_0, F) $ \\
+        $ Q = \{ q_0, q_1, q_2, q_3, q_{end} \} $ \\
+        $ \Sigma = \{0, 1 \} $ \\
+        $ \Gamma = \{0, 1,``B"\} $\\
+        $ F = \{q_{end}\}$
+        
+        \begin{table}[h!]
+            \centering
+             \renewcommand{\arraystretch}{1.33}
+             \begin{tabular}{c|ccc}
+             
+                 $\delta$ & $0$ & $1$ & $B$ \\ \hline
+                 $q_0$ & $(q_0, 0, R)$ & $(q_0, 1, R)$ & $(q_1, B, L)$ \\
+                 $q_1$ & $(q_1, 1, L)$ & $(q_2, 0, L)$ & $(q_end, B, N)$ \\
+                 $q_2$ & $(q_0, 0, R)$ & $(q_0, 1, R)$ & $(q_3, B, R)$ \\
+                 $q_3$ & $(q_0, B, R)$ & - & - \\
+                 $q_{end}$ & - & - & - \\
+             \end{tabular}
+         \end{table}
+
+
+        \item[(a)] Platzaufwand dieser TM:\\
+        Sei n die Anzahl der Bits von p. Die TM beschreibt nur den Bandbereich der Eingabe sowie die 
+        beiden Blanks direkt links bzw. rechts der Eingabe, welche gelesen und direkt wieder als B geschrieben werden.
+        In beiden Fällen ($q_0$ und $q_2$) wird der Kopf auch weg von den weiteren Blanks bewegt.\\
+        Somit wird insgesamt nur der Platz der Eingabe sowie die beiden Felder direkt rechts und links davon benötigt.\\
+        $\rightarrow n + O(1)$
+
+\end{itemize}
+
+\end{document}

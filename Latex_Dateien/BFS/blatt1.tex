@@ -1,0 +1,112 @@
+\documentclass[11pt]{article}
+\usepackage{graphicx} % Required for inserting images
+\usepackage{indentfirst}
+\usepackage[a4paper, margin=3cm]{geometry}
+\usepackage[main=ngerman]{babel}
+\usepackage{hyperref}
+\usepackage[shortlabels]{enumitem}
+
+\setlength{\parskip}{5pt}
+\graphicspath{./images/}
+\hypersetup{linktoc=all}
+
+\title{BFS - Blatt 1}
+\author{oz83upir (Jan Gremer) - lu08mika (Metin Eren Heybet)\\
+ - om24esyc (Luka Jeremic) - ci24nony (Dennis Gehring)}
+\date{03 November 2024}
+
+\begin{document}
+
+\maketitle
+
+\section*{Aufgabe 6}
+
+\subsection*{a) 7*a*b}
+
+\begin{verbatim}
+    // c(1)=a, c(2)=b, c(3)=Ergebnis
+    
+    1) C-LOAD 7
+    2) STORE 4
+    3) LOAD 1
+    4) STORE 3
+
+    // Erste for-loop: 7*a
+    5) LOAD 3
+    6) ADD 1
+    7) STORE 3
+    8) LOAD 4
+    9) C-SUB 1
+    10) STORE 4
+    11) IF c(0) $>$  1 GOTO 5
+
+    // Zweite for-loop: 7a * b
+    12) LOAD 3
+    13) STORE 5
+    14) LOAD 2
+    15) STORE 4
+    16) LOAD 3
+    17) ADD 5
+    18) STORE 3
+    19) LOAD 4
+    20) C-SUB 1
+    21) STORE 4
+    22) IF c(0) $>$ 1 GOTO 16
+
+    23) END
+\end{verbatim}
+
+Hinweis: Die for-loops haben die Bedingung "$>$ 1", da c(3):
+Beim ersten Loop mit a, beim zweiten Loop mit 7a initialisiert wird.
+
+Laufzeit = \boldmath$O(b)$\unboldmath. Die obere Loop für die Berechnung von 7a wird stets 7 mal ausgeführt.
+ Die zweite Loop wird b mal ausgeführt. Deswegen hängt die Laufzeit von b ab.
+
+\subsection*{b) c(1) zur Basis-7 umwandeln}
+
+\begin{verbatim}
+    // c(1)=a, c(2)=b, c(3)=Ergebnis
+    
+    1) C-LOAD 10
+    2) STORE 4
+    3) LOAD 1
+    4) C-DIV 7
+    5) STORE 2
+    6) C-MULT 7
+    7) STORE 3
+    8) LOAD 1
+    9) SUB 3
+    10) IND-STORE 4
+    11) LOAD 4
+    12) C-ADD 1
+    13) STORE 4
+    14) LOAD 2
+    15) STORE 1
+    16) IF c(0) > 0 GOTO 4
+\end{verbatim}
+
+\section*{Aufgabe 7}
+\subsection*{a) Berechnungen für die Eingaben: 0011 und 011}
+
+\begin{itemize}
+    \item $q_00011 \vdash Xq_1011 \vdash X0q_111 \vdash Xq_20Y1 
+    \vdash q_4X0Y1 \vdash Xq_00Y1 \vdash XXq_1Y1 \vdash XXYq_11 \vdash XXq_2YY 
+    \vdash Xq_2XYY \vdash XXq_3YY \vdash XXYq_3Y \vdash XXYYq_3 \vdash XXYYYq_5$
+    \boldmath $\Longrightarrow$ \textbf{TM hält akzeptierend, $q_5$ ist ein gültiger Zustand, Eingabe wird akzeptiert.}
+
+    \item \unboldmath $q_0011 \vdash Xq_111 \vdash Xq_3Y1 \vdash XYq_31$ \boldmath $\Longrightarrow$ \textbf{TM hält nicht akzeptierend, $q_3$ kein gültiger Zustand, Eingabe wird nicht akzeptiert}
+\end{itemize}
+
+\subsection*{b) akzeptierte Sprache}
+
+$L = \{{0^n 1^n | n \geq 1}\} $
+
+Begründung: Da die TM nur akzeptierend hält, wenn die Eingabe eine Anzahl n von Nullen gefolgt von n Einsen enthält (und nicht weiteres), wodurch das Band am Ende n X und n+1 Y enthält und dann die TM den gültigen Endzustand q5 erreicht.
+
+Terminiert das Programm?\\
+Das Programm hält in jedem Zustand für ein Blank, außer in q3. Dort wird allerdings in den gültigen Endzustand übergegangen.\\
+Es muss also mit endlicher Eingabe ein Nicht-Halten erreicht werden. Dazu brauchen wir eine Endlosschleife in den Zustandsübergängen und dazu brauchen wir einen Zustandsübergang,
+ der zu einem Zustand mit einer niedrigeren Nummer führt. Der einzige solche ist der Übergang von q4 auf q0. Somit ergibt sich die einzige mögliche Endlosschleife q0 $\rightarrow$ q1 
+$\rightarrow$ q2 $\rightarrow$ q4 $\rightarrow$ q0. Hierbei wird allerdings im Zustand q0 eine 0 und im Zustand q1 eine 1 vernichtet, wodurch auch diese mögliche Endlosschleife keine Endlosschleife
+ist und halten würde. Somit gibt es keine Endlosschleifen und die TM hält für jede Eingabe.
+\end{document}

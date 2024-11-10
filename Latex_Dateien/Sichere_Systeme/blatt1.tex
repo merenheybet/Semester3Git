@@ -1,0 +1,62 @@
+\documentclass[12pt]{article}
+\usepackage{graphicx} % Required for inserting images
+\usepackage{indentfirst}
+\usepackage[a4paper, margin=3cm]{geometry}
+\usepackage[main=ngerman]{babel}
+\usepackage{hyperref}
+\usepackage[shortlabels]{enumitem}
+
+\setlength{\parskip}{5pt}
+\graphicspath{./images/}
+\hypersetup{linktoc=all}
+
+\title{Sichere Systeme \\
+Aufgabe 1 - Gruppe 1}
+\author{Metin Eren Heybet - lu08mika}
+\date{24 Oktober 2024}
+
+\begin{document}
+
+    \maketitle
+
+    \section{Schutzziele}
+
+    \begin{enumerate}[(a)]
+        \item Die Verfügbarkeit von dem Netzwerk des Nachbarn wird hier wegen (dem?) Jamming verletzt.
+        \item Hier werden die Vertraulichkeit, Integrität des Zustandes und Verfügbarkeit verletzt.
+        \begin{itemize}
+            \item Die Vertraulichkeit: Die personenbezogene Daten sind von Angreifer erreicht geworden und wurden eine Kopie davon erstellt 
+            \item Die Integrität des Zustandes: Die Originaleinträge wurden aus der Datenbank gelöscht.
+            \item Verfügbarkeit: Die Informationen sind zurzeit nicht erreichbar.
+        
+            \item Außerdem könnte argumentiert werden, dass die Anonymität der Kunden verletzt wurden.
+        \end{itemize}
+
+        \item Vertraulichkeit und möglicherweise die Integrität des Zustandes; Vertraulichkeit von dem Cloud-Provider 
+        \begin{itemize}
+            \item Vertraulichkeit: Die persönliche Ferienfotos wurden von Dritten erreicht und übermittelt.
+            \item Integrität des Zustandes: da es keine andere Kopie der Fotos gibt, könnte man nicht sicher sein, dass die Fotos nicht verändert wurden.
+            \item Die Vertraulichkeit des Cloud-Dienstes könnte auch verletzt wurden, wie z.B. ein Datenleck abhängig davon, wie die Fotos von dem Werber erhalten wurden. 
+        \end{itemize}
+
+        \item Nicht-Abstreitbarkeit(Integrität) wurde verletzt, wenn (ich) behaupten würde, dass ich die App nie gekauft habe.
+    \end{enumerate}    
+
+    \section{Strafbarkeit}
+
+    \begin{enumerate}[(a)]
+        \item H könnte mit 202a und 202d bestrafen werden. Er nutzt eine Schwachstelle aus und erreicht private Informationen und diese übermittelt. (Vertraulichkeit verletzt.)
+        \item möglicherweise mit 202a strafbar, aber da alle Beteiligten das gewähren und auch der ganze Wettbewerb in einem privaten Netz stattfindet, sollte es nicht strafbar sein.
+        \item 
+        \begin{itemize}
+            \item Der Student S mit 202b (und 202c) strafbar, da unberechtigter Zugang auf dem Netzwerk seines Nachbarn.
+            \item Programmierer P mit 202c strafbar: Entwicklung von einem solchen Programm könnte als Vorbereitung angenommen werden.
+        \end{itemize}
+        \item
+        \begin{itemize}
+            \item 202a == unbefugter Zugang auf geschützter Servers
+            \item 202d == Die Logindaten von Hintertüren im Darknet verkaufen, was dazu äquivalent wäre, Daten der Servers zu verkaufen.
+            \item 303a == neue Software an Servers installieren, Serverkonfigurationen manipulileren. (Int. des Zustandes verletzt)
+        \end{itemize}    
+    \end{enumerate}    
+\end{document}
