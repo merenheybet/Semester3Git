@@ -69,7 +69,7 @@
     \item Wieviel Platz $S_{A9}(n)$ und Zeit $T_{A9}(n)$ benötigt die TM?:
     \begin{itemize}
         \item[--] Platzbedarf der TM M ist $\Theta(n)$, da die Turingmaschine M außer dem schon besetzten Bereich nie etwas schreibt. Also die Maschine läuft \glqq in-place\grqq.
-        \item[--] Laufzeit $\Theta(n^2)$: Begründung...
+        \item[--] Laufzeit $\Theta(n^2)$: Nachdem ein Zeichen aus dem ersten Wort gemerkt wird, bewegt sich der Kopf durch den Rest des Worts und auch nach der Vergleichung zurück. Also insgesamt wird $n^2$ mal das Band durchgelaufen.
     \end{itemize}
     
 \end{enumerate}
