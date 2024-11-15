@@ -1,7 +1,7 @@
 Latex_Dateien Alias
-*.gz
-*.out
-*.log
-*.fls
-*.aux
-*.fdb_latexmk
+.gz
+.out
+.log
+.fls
+.aux
+.fdb_latexmk
