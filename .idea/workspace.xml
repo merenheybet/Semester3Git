@@ -6,6 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="492aef20-9c19-4e8e-a870-a6bcdf518ab7" name="Changes" comment="Finished the GrabTheCookies. Ready for abgabe">
       <change afterPath="$PROJECT_DIR$/PFP(Java)/aufgabe4/TernarySearch/ThreadedTernarySearch.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/Semester3Git.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Semester3Git.iml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -78,6 +79,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "git-widget-placeholder": "main",
     "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "/Users/metinerenheybet/IdeaProjects/Semester3Git",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
