@@ -1,0 +1,17 @@
+Index: PFP(Java)/aufgabe4/TernarySearch/ThreadedTernarySearch.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/PFP(Java)/aufgabe4/TernarySearch/ThreadedTernarySearch.java b/PFP(Java)/aufgabe4/TernarySearch/ThreadedTernarySearch.java
+new file mode 100644
+--- /dev/null	(date 1731969618652)
++++ b/PFP(Java)/aufgabe4/TernarySearch/ThreadedTernarySearch.java	(date 1731969618652)
+@@ -0,0 +1,7 @@
++public class ThreadedTernarySearch implements ParallelTernarySearch{
++
++    @Override
++    public Double[] findMinimum(Function[] f, double[] left, double[] right, int nThreads, TernarySearch rootFinder) {
++        return new Double[0];
++    }
++}

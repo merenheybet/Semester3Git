@@ -1,0 +1,313 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="492aef20-9c19-4e8e-a870-a6bcdf518ab7" name="Changes" comment="Finished the GrabTheCookies. Ready for abgabe">
+      <change afterPath="$PROJECT_DIR$/PFP(Java)/aufgabe4/TernarySearch/ThreadedTernarySearch.java" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Enum" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="UPDATE_TYPE" value="REBASE" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;merenheybet&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/merenheybet/Semester3Git.git&quot;,
+    &quot;accountId&quot;: &quot;19a7be08-8a61-4486-abc4-616521d2b191&quot;
+  }
+}</component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="QODANA_PROBLEMS_VIEW_TAB" />
+  </component>
+  <component name="ProjectCodeStyleSettingsMigration">
+    <option name="version" value="2" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 3
+}</component>
+  <component name="ProjectId" id="2nq9SXJr1OAUlHaxMJOfp7KPgzg" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.BasesExecutor.executor": "Run",
+    "Application.BasesRunner.executor": "Run",
+    "Application.BasesThread.executor": "Run",
+    "Application.GrabTheCookies.executor": "Run",
+    "Application.counterturing.executor": "Run",
+    "Application.main.executor": "Run",
+    "Application.turingmachine.executor": "Run",
+    "Downloaded.Files.Path.Enabled": "false",
+    "JUnit.All in Semester3Git.executor": "Run",
+    "JUnit.PetriNetTest.executor": "Run",
+    "JUnit.PetriNetTest.testCanFireWithBothInAndOut.executor": "Run",
+    "JUnit.PetriNetTest.testCanFireWithBothInandOut.executor": "Run",
+    "JUnit.PetriNetTest.testExampleNetNumberOfPlacesAndTransitions.executor": "Run",
+    "JUnit.TernarySearchTest.testTernarySearch.executor": "Run",
+    "JUnit.TernarySearchTest.testThreadedSearch.executor": "Run",
+    "Repository.Attach.Annotations": "false",
+    "Repository.Attach.JavaDocs": "false",
+    "Repository.Attach.Sources": "false",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "main",
+    "kotlin-language-version-configured": "true",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "preferences.pluginManager",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/PFP(Java)/aufgabe4/TernarySearch" />
+      <recent name="$PROJECT_DIR$/PFP(Java)/aufgabe4" />
+      <recent name="$PROJECT_DIR$/PFP(Java)/aufgabe3/Cookies" />
+    </key>
+  </component>
+  <component name="RunManager" selected="JUnit.TernarySearchTest.testTernarySearch">
+    <configuration name="BasesThread" type="Application" factoryName="Application" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="BasesThread" />
+      <module name="Semester3Git" />
+      <option name="PROGRAM_PARAMETERS" value="4" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="GrabTheCookies" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="GrabTheCookies" />
+      <module name="Semester3Git" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="counterturing" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="counterturing" />
+      <module name="Semester3Git" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="main" />
+      <module name="Semester3Git" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TernarySearchTest.testTernarySearch" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Semester3Git" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="TernarySearchTest" />
+      <option name="METHOD_NAME" value="testTernarySearch" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TernarySearchTest.testThreadedSearch" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Semester3Git" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="TernarySearchTest" />
+      <option name="METHOD_NAME" value="testThreadedSearch" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <list>
+      <item itemvalue="Application.BasesThread" />
+      <item itemvalue="Application.main" />
+      <item itemvalue="Application.GrabTheCookies" />
+      <item itemvalue="Application.counterturing" />
+      <item itemvalue="JUnit.TernarySearchTest.testTernarySearch" />
+      <item itemvalue="JUnit.TernarySearchTest.testThreadedSearch" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.TernarySearchTest.testTernarySearch" />
+        <item itemvalue="Application.main" />
+        <item itemvalue="JUnit.TernarySearchTest.testThreadedSearch" />
+        <item itemvalue="Application.GrabTheCookies" />
+        <item itemvalue="Application.counterturing" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-jdk-9823dce3aa75-28b599e66164-intellij.indexing.shared.core-IU-242.23726.103" />
+        <option value="bundled-js-predefined-d6986cc7102b-5c90d61e3bab-JavaScript-IU-242.23726.103" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="492aef20-9c19-4e8e-a870-a6bcdf518ab7" name="Changes" comment="" />
+      <created>1729689738973</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1729689738973</updated>
+      <workItem from="1729689740125" duration="315000" />
+      <workItem from="1729690151509" duration="117000" />
+      <workItem from="1729690275603" duration="5000" />
+      <workItem from="1729863700305" duration="2645000" />
+      <workItem from="1729866494352" duration="962000" />
+      <workItem from="1729867464972" duration="242000" />
+      <workItem from="1729868180155" duration="816000" />
+      <workItem from="1729880571002" duration="202000" />
+      <workItem from="1730199008382" duration="2089000" />
+      <workItem from="1730209425411" duration="260000" />
+      <workItem from="1730286354185" duration="505000" />
+      <workItem from="1730455608738" duration="2721000" />
+      <workItem from="1730885837577" duration="764000" />
+      <workItem from="1730925584832" duration="5625000" />
+      <workItem from="1730931841984" duration="227000" />
+      <workItem from="1730982929032" duration="787000" />
+      <workItem from="1731062050806" duration="333000" />
+      <workItem from="1731063094045" duration="1981000" />
+      <workItem from="1731065500728" duration="914000" />
+      <workItem from="1731082044338" duration="5487000" />
+      <workItem from="1731532708722" duration="28000" />
+      <workItem from="1731584054548" duration="2839000" />
+      <workItem from="1731759332005" duration="78000" />
+      <workItem from="1731762220949" duration="101000" />
+      <workItem from="1731880851598" duration="174000" />
+      <workItem from="1731967528687" duration="2088000" />
+    </task>
+    <task id="LOCAL-00001" summary="Started first exercise for Parallele und Funktionale Programmierung">
+      <option name="closed" value="true" />
+      <created>1729863807773</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1729863807773</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Wrote the implementation for PetriNet and ExampleNet.">
+      <option name="closed" value="true" />
+      <created>1729867001562</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1729867001562</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Fixed some errors">
+      <option name="closed" value="true" />
+      <created>1729867697122</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1729867697122</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Updated PetriNet implementation to take into consideration some edge cases. Also added more test cases.">
+      <option name="closed" value="true" />
+      <created>1730286853359</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1730286853359</updated>
+    </task>
+    <task id="LOCAL-00005" summary="PFP Blatt 2 - Start of multithreading. Wrote small class that converts a given number to the bases 2&lt;= n &lt;= N+1, whereas N is argv[0].">
+      <option name="closed" value="true" />
+      <created>1730886447345</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1730886447345</updated>
+    </task>
+    <task id="LOCAL-00006" summary="Wrote a programm to check if the turingmachine from bfs homework is working properly. This turing machine checks if the word left and right of the # sign are identical.">
+      <option name="closed" value="true" />
+      <created>1730929459933</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1730929459933</updated>
+    </task>
+    <task id="LOCAL-00007" summary="Updated the output notation to be compatible with latex syntax">
+      <option name="closed" value="true" />
+      <created>1730930230525</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1730930230525</updated>
+    </task>
+    <task id="LOCAL-00008" summary="Updated the output notation to be directly compatible with latex syntax">
+      <option name="closed" value="true" />
+      <created>1730931222933</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1730931222933</updated>
+    </task>
+    <task id="LOCAL-00009" summary="aufgabe10 from the bfs homework. Implemented a counter TM, that counts in place and prints the outputs.">
+      <option name="closed" value="true" />
+      <created>1731066400337</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1731066400337</updated>
+    </task>
+    <task id="LOCAL-00010" summary="Finished the GrabTheCookies. Ready for abgabe">
+      <option name="closed" value="true" />
+      <created>1731681139313</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1731681139314</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Started first exercise for Parallele und Funktionale Programmierung" />
+    <MESSAGE value="Wrote the implementation for PetriNet and ExampleNet." />
+    <MESSAGE value="Fixed some errors" />
+    <MESSAGE value="Updated PetriNet implementation to take into consideration some edge cases. Also added more test cases." />
+    <MESSAGE value="PFP Blatt 2 - Start of multithreading. Wrote small class that converts a given number to the bases 2&lt;= n &lt;= N+1, whereas N is argv[0]." />
+    <MESSAGE value="Wrote a programm to check if the turingmachine from bfs homework is working properly. This turing machine checks if the word left and right of the # sign are identical." />
+    <MESSAGE value="Updated the output notation to be compatible with latex syntax" />
+    <MESSAGE value="Updated the output notation to be directly compatible with latex syntax" />
+    <MESSAGE value="aufgabe10 from the bfs homework. Implemented a counter TM, that counts in place and prints the outputs." />
+    <MESSAGE value="Finished the GrabTheCookies. Ready for abgabe" />
+    <option name="LAST_COMMIT_MESSAGE" value="Finished the GrabTheCookies. Ready for abgabe" />
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/Semester3Git$GrabTheCookies.ic" NAME="GrabTheCookies Coverage Results" MODIFIED="1731680622868" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true" />
+  </component>
+</project>
