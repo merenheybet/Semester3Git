@@ -1,5 +1,3 @@
-import static java.lang.Math.*;
-
 public class TernarySearchImpl implements TernarySearch {
 
 	
