@@ -4,23 +4,49 @@ public class ThreadedTernarySearch implements ParallelTernarySearch{
         Thread[] minThreads = new Thread[nThreads];
         Double[] results = new Double[f.length];
 
-        for(int i = 0; i < f.length; i++){
-            final int finalI = i;
-            minThreads[i] = new Thread(){
-                @Override
-                public void run() {
-                    results[finalI] = rootFinder.findMinimum(f[finalI], left[finalI], right[finalI]);
+        final int iterationCount = Math.floorDiv(f.length, nThreads);
+        final int iterationCountRest = f.length - (iterationCount * nThreads);
+
+        for (int j = 0; j < iterationCount; j++){
+            for(int i = 0; i < nThreads; i++){
+                final int index = (j * nThreads) + i;
+                minThreads[i] = new Thread(){
+                    @Override
+                    public void run() {
+                        results[index] = rootFinder.findMinimum(f[index], left[index], right[index]);
+                    }
+                };
+                minThreads[i].start();
+            }
+
+            for(int i = 0; i < nThreads; i++){
+                try{
+                    minThreads[i].join();
+                } catch (InterruptedException e) {
+                    //
                 }
-            };
-            minThreads[i].start();
+            }
         }
 
-        for(int i = 0; i< f.length; i++){
+        for(int j = 0 ; j < iterationCountRest ; j++){
+            final int index = (iterationCount * nThreads) + j;
+            minThreads[j] = new Thread(){
+                @Override
+                public void run() {
+                    results[index] = rootFinder.findMinimum(f[index], left[index], right[index]);
+                }
+            };
+            minThreads[j].start();
+        }
+
+        for(int j = 0 ; j < iterationCountRest ; j++){
             try{
-                minThreads[i].join();
+                minThreads[j].join();
             } catch (InterruptedException e) {
                 //
             }
         }
+
+        return results;
     }
 }
