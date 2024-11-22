@@ -7,29 +7,37 @@ public class TaskedTernarySearch implements ParallelTernarySearch{
         ExecutorService executor = Executors.newFixedThreadPool(nThreads);
         Double[] results = new Double[f.length];
 
-        class TernaryTask implements Callable<Double> {
+        final int elementPerThread = Math.ceilDiv(f.length, nThreads);
+
+        class TernaryTask implements Callable<Double[]> {
             final Function[] f;
             final double[] left;
             final double[] right;
             final TernarySearch rootFinder;
-            final int index;
+            final int elementPerThread;
+            final int threadNo;
 
-            TernaryTask(Function[] f, double[] left, double[] right, TernarySearch rootFinder, int index){
+            TernaryTask(Function[] f, double[] left, double[] right,
+                        TernarySearch rootFinder, int elementPerThread, int threadNo){
                 this.f = f;
                 this.left = left;
                 this.right = right;
                 this.rootFinder = rootFinder;
-                this.index = index;
+                this.elementPerThread = elementPerThread;
+                this.threadNo = threadNo;
             }
 
             @Override
-            public Double call() throws Exception {
-                return rootFinder.findMinimum(f[index], left[index], right[index]);
+            public Double[] call() throws Exception {
+                Double[] resultsOfThread = new Double[elementPerThread];
+                for(int i = 0; i < elementPerThread; i++){
+                    int currentIndex = (elementPerThread * threadNo) + i;
+                    if(currentIndex >= f.length){continue;}
+                    resultsOfThread[i] = rootFinder.findMinimum(f[currentIndex], left[currentIndex], right[currentIndex]);
+                }
+                return resultsOfThread;
             }
         }
-
-        final int iterationCount = Math.floorDiv(f.length, nThreads);
-        final int iterationCountRest = f.length - (iterationCount * nThreads);
 
 //        for(int i = 0; i < f.length; i++){
 //            Future<Double> f_result = executor.submit(new TernaryTask(f, left, right, rootFinder, i));
@@ -40,24 +48,15 @@ public class TaskedTernarySearch implements ParallelTernarySearch{
 //            }
 //        }
 
-        for (int j = 0; j < iterationCount; j++) {
-            for (int i = 0; i < nThreads; i++) {
-                final int index = (j * nThreads) + i;
-                Future<Double> f_result = executor.submit(new TernaryTask(f, left, right, rootFinder, index));
-                try{
-                    results[index] = f_result.get();
-                }catch (Exception ie){
-                    System.err.println("Unable to get result of calculation");
-                }
-            }
 
-        }
-
-        for(int i = 0; i < iterationCountRest ; i++){
-            final int index = (iterationCount * nThreads) + i;
-            Future<Double> doubleFuture = executor.submit(new TernaryTask(f, left, right, rootFinder, index));
+        for (int i = 0; i < nThreads; i++) {
+            final int indexOffset = (elementPerThread * i);
+            Future<Double[]> f_result = executor.submit(new TernaryTask(f, left, right, rootFinder, elementPerThread, i));
             try{
-                results[index] = doubleFuture.get();
+                for (int k = 0; k < f_result.get().length; k++){
+                    if(f_result.get()[k] == null){continue;}
+                    results[k + indexOffset] = f_result.get()[k];
+                }
             }catch (Exception ie){
                 System.err.println("Unable to get result of calculation");
             }
