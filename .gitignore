@@ -7,3 +7,4 @@ Latex_Dateien Alias
 .fdb_latexmk
 .idea
 .DS_STORE
+/out
