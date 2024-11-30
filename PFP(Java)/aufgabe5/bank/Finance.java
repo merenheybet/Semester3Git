@@ -60,8 +60,8 @@ public class Finance {
 
 	public static void main(String[] args) {
 //		runTransfers(new DeadlockBank(), 3);
-		//runTransfers(new QuickLockingBank(), 5);
-		runTransfers(new OrderedBank(), 7);
+		runTransfers(new QuickLockingBank(), 5);
+//		runTransfers(new OrderedBank(), 7);
 		//runTransfers(new ManagedBank(), 9);
 	}
 }

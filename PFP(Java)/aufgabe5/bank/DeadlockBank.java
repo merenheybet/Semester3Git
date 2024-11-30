@@ -4,7 +4,7 @@ public class DeadlockBank implements Bank{
     public boolean transfer(Account fromAccount, Account toAccount, int money) {
         synchronized (fromAccount){
             if(fromAccount.getMoney() < money){
-                System.err.println("Not enough money");
+                //System.err.println("Not enough money");
                 return false;
             }
             synchronized (toAccount){
