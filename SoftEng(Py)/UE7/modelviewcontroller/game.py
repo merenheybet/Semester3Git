@@ -5,6 +5,8 @@ import model
 import controller
 import view
 
+#### Ausser __name__ == 'main' in controller schreiben.
+
 # Possible game states
 ## GAME
 class GameState:

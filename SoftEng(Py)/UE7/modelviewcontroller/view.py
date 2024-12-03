@@ -1,6 +1,8 @@
 import pygame
 import utils
 
+### richtig
+
 def game_over(win):
     win.fill((255, 0, 0))
     text_surface = utils.font.render("Game Over", True, utils.WHITE)

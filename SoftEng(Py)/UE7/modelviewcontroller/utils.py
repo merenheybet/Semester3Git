@@ -1,6 +1,6 @@
 import pygame
-import random
-import time
+
+### richtig
 
 # Initial parameters
 ## UTILS ?

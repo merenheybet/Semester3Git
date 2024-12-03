@@ -2,6 +2,9 @@ import pygame
 import random
 import utils
 
+### richtig
+### move Funktionen sollte hier stehen. :(
+
 # needs move
 class Player(pygame.sprite.Sprite):
     def __init__(self):

@@ -2,6 +2,8 @@ import pygame
 import random
 import utils
 
+#### Auch die Spiellogik muss hier sein
+
 def move(model, axis, isNPC):
     if isNPC:
         match axis:
