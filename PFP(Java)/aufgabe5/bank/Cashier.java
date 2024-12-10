@@ -1,8 +1,7 @@
 import java.util.ArrayList;
-import java.util.concurrent.atomic.AtomicIntegerArray;
 
 public class Cashier {
-    private ArrayList<String> currentTransactions;
+    private final ArrayList<String> currentTransactions;
 
     public Cashier(){
         this.currentTransactions = new ArrayList<>();
@@ -15,7 +14,6 @@ public class Cashier {
             }
 
             currentTransactions.add("" + fromAccount.getId() + toAccount.getId());
-            return true;
         }
 
         else{
@@ -24,8 +22,8 @@ public class Cashier {
             }
 
             currentTransactions.add("" + toAccount.getId() + fromAccount.getId());
-            return true;
         }
+        return true;
     }
 
     public synchronized void completeTransaction(Account fromAccount, Account toAccount){

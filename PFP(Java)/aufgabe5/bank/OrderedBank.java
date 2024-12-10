@@ -7,7 +7,7 @@ public class OrderedBank implements Bank{
         if(fromAccountID < toAccountID){
             synchronized (fromAccount){
                 if(fromAccount.getMoney() < money){
-                    System.err.println("Not enough money");
+//                    System.err.println("Not enough money");
                     return false;
                 }
                 synchronized (toAccount){
@@ -22,7 +22,7 @@ public class OrderedBank implements Bank{
             synchronized (toAccount){
                 synchronized (fromAccount){
                     if(fromAccount.getMoney() < money){
-                        System.err.println("Not enough money");
+//                        System.err.println("Not enough money");
                         return false;
                     }
                     fromAccount.setMoney(fromAccount.getMoney() - money);

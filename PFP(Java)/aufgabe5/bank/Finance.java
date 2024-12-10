@@ -1,4 +1,5 @@
 import java.util.Random;
+import java.util.concurrent.atomic.AtomicInteger;
 
 public class Finance {
 	static class transferThread extends Thread{
@@ -16,8 +17,7 @@ public class Finance {
 		public void run() {
 			final Account fromAccount = accArray[threadID];
 			final Account toAccount = accArray[(threadID + 1) % accArray.length];
-//			while(true){
-			for(int i = 0; i < 100; i++){
+			while(true){
 				transferRandomMoney(this.threadID, this.bank, fromAccount, toAccount);
 			}
 		}
@@ -59,10 +59,10 @@ public class Finance {
 
 
 	public static void main(String[] args) {
-//		runTransfers(new DeadlockBank(), 3);
-//		runTransfers(new QuickLockingBank(), 5);
-//		runTransfers(new OrderedBank(), 7);
-		runTransfers(new ManagedBank(), 9);
+//		runTransfers(new DeadlockBank(), 2);
+//		runTransfers(new QuickLockingBank(), 2);
+//		runTransfers(new OrderedBank(), 2);
+		runTransfers(new ManagedBank(), 2);
 	}
 }
 
