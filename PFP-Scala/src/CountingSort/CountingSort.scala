@@ -1,6 +1,8 @@
 def incCount: (Int, List[Int]) => List[Int] =
-  case (a, b) if b.length <= a => incCount(a, b ::: List(0))
-  case (a, b) => b.take(a) ::: List(b(a) + 1) ::: b.drop(a + 1)
+  case (0, Nil) => List(1)
+  case (0, a::b) => (a+1)::b
+  case (i, Nil) => 0::incCount(i-1, Nil)
+  case (i, a::b) => a::incCount(i-1, b)
 
 def getCounts: List[Int] => List[Int] =
   case Nil => Nil
