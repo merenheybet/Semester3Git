@@ -1,0 +1,17 @@
+MALLOC:
+	(X) If size is 0, then return a unique pointer, that can later succesfully be passed by free() -> this is just NULL, the real malloc does so, too
+	( ) Trying to allocate more than PTRDIFF_MAX bytes is considered an error 
+
+REALLOC:
+	(X) If ptr is NULL, then the call is equivalent to malloc(size)
+	(X) If size is 0, then NULL is returned
+	(X) If the function fails, the original block is left untouched, it is not freed
+
+CALLOC:
+	(X) If any of the arguments is 0, then a unique pointer is returned, that can later succesfully be passed by free()
+	( ) If the multiplication of the argumnets would result in integer overflow, return an error 
+
+FREE:
+	(X) If ptr is NULL, no operation is performed
+
+
